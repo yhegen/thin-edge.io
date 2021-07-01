@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -e
+
+# Create a group "dvs-mapper" if not created before
+if ! getent group dvs-mapper > /dev/null; then
+    addgroup --quiet --system dvs-mapper
+fi
+
+# Create a user "dvs-mapper" if not created before
+if ! getent passwd dvs-mapper > /dev/null; then
+    adduser --quiet --system --no-create-home --ingroup dvs-mapper --shell /usr/sbin/nologin dvs-mapper
+fi
+
+#DEBHELPER#

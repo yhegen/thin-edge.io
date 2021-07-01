@@ -11,8 +11,7 @@ description = "dvs_mapper is the mapper that translates DVS data model to Thin E
 depends = "tedge"
 maintainer-scripts = "configuration/debian/dvs_mapper"
 assets = [
-    ["../../configuration/contrib/collectd/collectd.conf", "/etc/tedge/contrib/collectd/", "644"],
-    ["target/release/collectd_mapper", "/usr/bin/collectd_mapper", "755"],
+    ["target/release/dvs_mapper", "/usr/bin/dvs_mapper", "755"],
 ]
 
 [package.metadata.deb.systemd-units]
